@@ -77,8 +77,103 @@ int main(int argc, char *argv[]) {
                 a[i][j] = '+';
             } else if (VII == 3 && m[i][j] == '+')
               a[i][j] = 'X';
+          } else if (i == 0 && j == 0) {
+            VII = 0;
+            MORTI = 0;
+            if (m[i][j + 1] == 'X')
+              VII++;
+            else
+              MORTI++;
+
+            if (m[i + 1][j + 1] == 'X')
+              VII++;
+            else
+              MORTI++;
+
+            if (m[i + 1][j] == 'X')
+              VII++;
+            else
+              MORTI++;
+
+            if (m[i][j] == 'X' && VII < 2)
+              a[i][j] = '+';
+            else if (m[i][j] == 'X' && VII > 3)
+              a[i][j] = '+';
+            else if (m[i][j] == '+' && VII == 3)
+              a[i][j] = 'X';
+          } else if (i == 0 && j == M - 1) {
+            VII = 0;
+            MORTI = 0;
+            if (m[i][j - 1] == 'X')
+              VII++;
+            else
+              MORTI++;
+
+            if (m[i + 1][j - 1] == 'X')
+              VII++;
+            else
+              MORTI++;
+
+            if (m[i + 1][j] == 'X')
+              VII++;
+            else
+              MORTI++;
+
+            if (m[i][j] == 'X' && VII < 2)
+              a[i][j] = '+';
+            else if (m[i][j] == 'X' && VII > 3)
+              a[i][j] = '+';
+            else if (m[i][j] == '+' && VII == 3)
+              a[i][j] = 'X';
+          } else if (i == N - 1 && j == 0) {
+            VII = 0;
+            MORTI = 0;
+            if (m[i][j + 1] == 'X')
+              VII++;
+            else
+              MORTI++;
+
+            if (m[i - 1][j + 1] == 'X')
+              VII++;
+            else
+              MORTI++;
+
+            if (m[i - 1][j] == 'X')
+              VII++;
+            else
+              MORTI++;
+
+            if (m[i][j] == 'X' && VII < 2)
+              a[i][j] = '+';
+            else if (m[i][j] == 'X' && VII > 3)
+              a[i][j] = '+';
+            else if (m[i][j] == '+' && VII == 3)
+              a[i][j] = 'X';
+          } else if (i == N - 1 && j == M - 1) {
+            VII = 0;
+            MORTI = 0;
+            if (m[i - 1][j] == 'X')
+              VII++;
+            else
+              MORTI++;
+
+            if (m[i][j - 1] == 'X')
+              VII++;
+            else
+              MORTI++;
+
+            if (m[i - 1][j - 1] == 'X')
+              VII++;
+            else
+              MORTI++;
+
+            if (m[i][j] == 'X' && VII < 2)
+              a[i][j] = '+';
+            else if (m[i][j] == 'X' && VII > 3)
+              a[i][j] = '+';
+            else if (m[i][j] == '+' && VII == 3)
+              a[i][j] = 'X';
           } 
-      }
 
       if (K != 1) {
         for (r = 0; r < N; r++) {
