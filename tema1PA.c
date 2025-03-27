@@ -48,39 +48,69 @@ int main(int argc, char *argv[]) {
           m[i][j] = a[i][j];
         }
       }
+      for (i = 0; i < N; i++) {
+        for (j = 0; j < M; j++) {
+          if (i - 1 >= 0 && j - 1 >= 0 && i + 1 < N && j + 1 < M) {
 
+            VII = 0;
 
-if (K != 1) {
-    for (r = 0; r < N; r++) {
+            if (m[i - 1][j] == 'X')
+              VII++;
+            if (m[i - 1][j - 1] == 'X')
+              VII++;
+            if (m[i - 1][j + 1] == 'X')
+              VII++;
+            if (m[i][j + 1] == 'X')
+              VII++;
+            if (m[i][j - 1] == 'X')
+              VII++;
+            if (m[i + 1][j] == 'X')
+              VII++;
+            if (m[i + 1][j - 1] == 'X')
+              VII++;
+            if (m[i + 1][j + 1] == 'X')
+              VII++;
 
-      for (b = 0; b < M; b++) {
-        fprintf(fout, "%c", a[r][b]);
+            if (m[i][j] == 'X') {
+
+              if (VII < 2 || VII > 3)
+                a[i][j] = '+';
+            } else if (VII == 3 && m[i][j] == '+')
+              a[i][j] = 'X';
+          } 
       }
 
-      fprintf(fout, "\n");
-    }
-  } else {
-    for (r = 0; r < N - 1; r++) {
+      if (K != 1) {
+        for (r = 0; r < N; r++) {
 
-      for (b = 0; b < M; b++) {
-        fprintf(fout, "%c", a[r][b]);
+          for (b = 0; b < M; b++) {
+            fprintf(fout, "%c", a[r][b]);
+          }
+
+          fprintf(fout, "\n");
+        }
+      } else {
+        for (r = 0; r < N - 1; r++) {
+
+          for (b = 0; b < M; b++) {
+            fprintf(fout, "%c", a[r][b]);
+          }
+
+          fprintf(fout, "\n");
+        }
+        r = N - 1;
+
+        for (b = 0; b < M; b++) {
+          fprintf(fout, "%c", a[r][b]);
+        }
       }
 
-      fprintf(fout, "\n");
-    }
-    r = N - 1;
-
-    for (b = 0; b < M; b++) {
-      fprintf(fout, "%c", a[r][b]);
+      K--;
     }
   }
+  fprintf(fout, "\n");
+  fprintf(fout, "\n");
 
-  K--;
-}
-}
-fprintf(fout, "\n");
-fprintf(fout, "\n");
-
-fclose(fin);
-fclose(fout);
+  fclose(fin);
+  fclose(fout);
 }
