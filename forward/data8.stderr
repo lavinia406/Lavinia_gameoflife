@@ -1,0 +1,6 @@
+==32416== error calling PR_SET_PTRACER, vgdb might block
+==32416==  If you believe this happened as a result of a stack
+==32416==  overflow in your program's main thread (unlikely but
+==32416==  possible), you can try to increase the size of the
+==32416==  main thread stack using the --main-stacksize= flag.
+==32416==  The main thread stack size used in this run was 8388608.

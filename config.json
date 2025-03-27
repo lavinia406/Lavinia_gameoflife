@@ -1,0 +1,10 @@
+{
+	"source_path": "./src",
+	"executable_path": "./program",
+	"input_path": "./project-data-main-gameoflife/gameoflife/InputData",
+	"output_path": "./out",
+	"ref_path": "./project-data-main-gameoflife/gameoflife/RefData",
+	"forward_path": "./forward",
+	"run_valgrind": true,
+	"tutorial": false
+}
